@@ -21,7 +21,8 @@ struct Shape{
     float side1;
     float side2;
     float area;//I think in some sorting algorithms you may end up calculating this for some elements of the list of shapes
-    //hundreds of times if the list is large enough so I decided the 4-bytes of memory may be cheaper
+    //hundreds of times if the list is large enough so I decided the 4-bytes of memory may be cheaper to simply calculate them once
+    
     unsigned int shapeType: 3;
     /*
      * 0 sqaure/rectangle
