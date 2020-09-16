@@ -10,9 +10,11 @@
  *
  * Created on September 10, 2020, 1:22 PM
  */
-
+// $./a.out filename name bubble //file must be inside of the files folder
+// $./a.out filename number quick //for number in file instead of shape name and use quicksort
 #include <stdio.h>
 #include <stdlib.h>
+#include <math.h>
 #define PI 3.14159265358979323846 //used for calculation of shapes requiring pi for calculation
 /*
  * 
@@ -46,19 +48,29 @@ float calcArea(struct Shape *shape){
             return shape->side1 * shape->side2;
             break;
         case 1:
+            return (shape->side1 * shape->side2)/2;
             break;
         case 2:
+            return PI*(shape->side1*shape->side1);
             break;
         case 3:
+            return (sqaured(shape->side1)*shape->side2)/2;
             break;
         case 4:
+            return shape->side1* shape->side2*PI;
             break;
         case 5:
+            return shape->side1 * shape->side2;
             break;
         case 6:
+            return (sqaured(shape->side1)+(sqrt(25+10sqrt(5))))/4;
             break;
         case 7:
+            return 3/2*sqrt(3)*sqaured(shape->side1);
             break;       
     }
+}
+float sqaured(float toSqaure){
+    return toSqaure*toSqaure;
 }
 
