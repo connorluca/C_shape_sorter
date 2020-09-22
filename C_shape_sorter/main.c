@@ -13,10 +13,12 @@
 // $./a.out filename 1 bubble //file must be inside of the files folder //1 for number, 2 for shapename in file
 // $./a.out filename 2 quick //for number in file instead of shape name and use quicksort
 //If shapename is used rather than number to indicate file it will be case sensitive
+//Sorted from lowest to highest
 #include <stdio.h>
 #include <stdlib.h>
 #include <math.h>
 #include <welcome.h>
+#include "selectionSort.c"
 /*
  * 
  */
@@ -29,6 +31,17 @@ int main(int argc, char** argv) {
     struct Shape shapes[numberOfShapes];
     shapes = readShapes(fp, numberOfShapes, (int)argv[2]);
     fclose(fp);
+    if(strcmp(argv[3], "Selection")==0){
+        shapes = selection(shapes, numberOfShapes);
+    }
+    else if(){
+        
+    }
+    else{
+      puts("Invalid sort option selected");
+      return -1;//failure due to user input
+    }
+    
     return (EXIT_SUCCESS);
 }
 float calcArea(struct Shape *shape, char shapeName[]){
