@@ -34,7 +34,26 @@
 
 #ifndef _welcome_H
 #define	_welcome_H
-
+#define PI 3.14159265358979323846 //used for calculation of shapes requiring pi for calculation
+struct Shape{
+    float side1;
+    float side2;
+    float area;//I think in some sorting algorithms you may end up calculating this for some elements of the list of shapes
+    //hundreds of times if the list is large enough so I decided the 4-bytes of memory may be cheaper to simply calculate them once
+    
+    unsigned int shapeType: 4;
+    /*
+     * 0 Rectangle
+     * 1 Triangle side1 = height side2= base
+     * 2 Circle side1= raduis
+     * 3 CircleSector side1= raduis side2=angle
+     * 4 Ellipse side1=axis1 side2=axis2(doesnt really matter order like shape 0)
+     * 5 Parallelogram side1=base side2= height
+     * 6 Pentagon side1=length
+     * 7 Hexagon side1=length
+     */
+    
+};
 
 
 #endif	/* _welcome_H */

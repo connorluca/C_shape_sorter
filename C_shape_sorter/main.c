@@ -10,39 +10,29 @@
  *
  * Created on September 10, 2020, 1:22 PM
  */
-// $./a.out filename name bubble //file must be inside of the files folder
-// $./a.out filename number quick //for number in file instead of shape name and use quicksort
+// $./a.out filename 1 bubble //file must be inside of the files folder //1 for number, 2 for shapename in file
+// $./a.out filename 2 quick //for number in file instead of shape name and use quicksort
+//If shapename is used rather than number to indicate file it will be case sensitive
 #include <stdio.h>
 #include <stdlib.h>
 #include <math.h>
-#define PI 3.14159265358979323846 //used for calculation of shapes requiring pi for calculation
+#include <welcome.h>
 /*
  * 
  */
-struct Shape{
-    float side1;
-    float side2;
-    float area;//I think in some sorting algorithms you may end up calculating this for some elements of the list of shapes
-    //hundreds of times if the list is large enough so I decided the 4-bytes of memory may be cheaper to simply calculate them once
-    
-    unsigned int shapeType: 3;
-    /*
-     * 0 sqaure/rectangle
-     * 1 triangle side1 = height side2= base
-     * 2 circle side1= raduis
-     * 3 circle sector side1= raduis side2=angle
-     * 4 ellipse side1=axis1 side2=axis2(doesnt really matter order like shape 0)
-     * 5 parrelogram side1=base side2= height
-     * 6 pentagon side1=length
-     * 7 hexagon side1=length
-     */
-    
-};
 int main(int argc, char** argv) {
-
+    FILE *fp;
+    char fileName[] = (strcat("./files/",argv[1]); 
+    fp =fopen(fileName, "r");
+    int numberOfShapes;
+    fscanf(fp, "%d", numberOfShapes);
+    struct Shape shapes[numberOfShapes];
+    shapes = readShapes(fp, numberOfShapes, (int)argv[2]);
+    fclose(fp);
     return (EXIT_SUCCESS);
 }
-float calcArea(struct Shape *shape){
+float calcArea(struct Shape *shape, char shapeName[]){
+    
     switch(shape->shapeType){
         case 0:
             return shape->side1 * shape->side2;
@@ -72,5 +62,39 @@ float calcArea(struct Shape *shape){
 }
 float sqaured(float toSqaure){
     return toSqaure*toSqaure;
+}
+/* Reads in shape data and calc the area assigning to the area attribute
+ */
+struct Shape * readShapes(FILE *fp, int num, int type){
+    struct Shape shapes[num];
+    int i = 0;
+    float nextSide;
+    char shapeName[20];
+    while(!feof(fp)){
+    
+    if(type==1){
+        fscanf(fp, "%d", nextSide);
+        shapes[i].shapeType = nextSide;
+        fscanf(fp, "%f", nextSide);
+        shapes[i].side1 = nextSide;
+        fscanf(fp, "%f", nextSide);
+        shapes[i].side2 = nextSide;
+        shapes[i].area = calcArea(shapes[i]);
+    }
+    else{
+        fscanf(fp, "%s", shapeName);
+        shapes[i].shapeType = assignType(shapeName);
+        fscanf(fp, "%f", nextSide);
+        shapes[i].side1 = nextSide;
+        fscanf(fp, "%f", nextSide);
+        shapes[i].side2 = nextSide;
+        shapes[i].area = calcArea(shapes[i]);
+    }
+    }
+}
+/* Takes in text input an assigns the shape the approraite type ID
+ */
+int assignType(char text[]){
+    
 }
 
