@@ -19,6 +19,7 @@
 #include <math.h>
 #include <welcome.h>
 #include "selectionSort.c"
+#include "bubbleSort.c"
 /*
  * 
  */
@@ -31,11 +32,12 @@ int main(int argc, char** argv) {
     struct Shape shapes[numberOfShapes];
     shapes = readShapes(fp, numberOfShapes, (int)argv[2]);
     fclose(fp);
+    //numberOfShapes isn't really necessary I'm just including it out of laziness and code readability
     if(strcmp(argv[3], "Selection")==0){
         shapes = selection(shapes, numberOfShapes);
     }
-    else if(){
-        
+    else if(strcmp(argv[3], "Bubble")==0){
+        shapes = bubble(shapes, numberOfShapes);
     }
     else{
       puts("Invalid sort option selected");
