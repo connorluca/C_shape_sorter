@@ -26,7 +26,7 @@
  */
 int main(int argc, char** argv) {
     FILE *fp;
-    char fileName[] = (strcat("./files/",argv[1]); 
+    char fileName[] = (strcat("./files/",argv[1])); 
     fp =fopen(fileName, "r");
     int numberOfShapes;
     fscanf(fp, "%d", numberOfShapes);
