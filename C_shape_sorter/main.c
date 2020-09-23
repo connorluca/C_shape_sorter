@@ -20,6 +20,7 @@
 #include <welcome.h>
 #include "selectionSort.c"
 #include "bubbleSort.c"
+#include "linearInsertionSort.c"
 /*
  * 
  */
@@ -38,6 +39,9 @@ int main(int argc, char** argv) {
     }
     else if(strcmp(argv[3], "Bubble")==0){
         shapes = bubble(shapes, numberOfShapes);
+    }
+    else if(strcmp(argv[3], "LinearInsertion")==0){
+        shapes = linearInsertion(shapes, numberOfShapes);
     }
     else{
       puts("Invalid sort option selected");

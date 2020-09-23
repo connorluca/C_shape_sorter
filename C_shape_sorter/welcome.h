@@ -36,9 +36,9 @@
 #define	_welcome_H
 #define PI 3.14159265358979323846 //used for calculation of shapes requiring pi for calculation
 struct Shape{
-    float side1;
-    float side2;
-    float area;//I think in some sorting algorithms you may end up calculating this for some elements of the list of shapes
+    float side1=0;
+    float side2=0;
+    float area = 0;//I think in some sorting algorithms you may end up calculating this for some elements of the list of shapes
     //hundreds of times if the list is large enough so I decided the 4-bytes of memory may be cheaper to simply calculate them once
     
     unsigned int shapeType: 4;
@@ -54,6 +54,21 @@ struct Shape{
      */
     
 };
+
+/*Shifts the contents of the array one to the right
+ * This function assumes elements are stored inside the left most indexs first in the incoming array.
+ * shapes is the array to be shifted
+ * elementToShiftFrom is the index of the element we will start shifting elements to the right from
+ * elementToAdd is the element that will replace the index of elementToShiftFrom after the existing elements have been shifted to the right.
+ * currentArraySize is how many elements are currently stored in the array
+ */
+struct Shape * shiftArrayRight(struct Shape *shapes, int elementToShiftFrom, struct Shape elementToAdd, int currentArraySize){
+    for(int i = currentArraySize; i--; i >= elementToShiftFrom){
+        shapes[i+1] = shapes[i];
+    }
+    shapes[elementToShiftFrom] = elementToAdd;
+    return shapes;
+}
 
 
 #endif	/* _welcome_H */

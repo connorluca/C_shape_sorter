@@ -36,6 +36,7 @@ OBJECTDIR=${CND_BUILDDIR}/${CND_CONF}/${CND_PLATFORM}
 # Object Files
 OBJECTFILES= \
 	${OBJECTDIR}/bubbleSort.o \
+	${OBJECTDIR}/insertionSort.o \
 	${OBJECTDIR}/main.o \
 	${OBJECTDIR}/selectionSort.o
 
@@ -68,6 +69,11 @@ ${OBJECTDIR}/bubbleSort.o: bubbleSort.c
 	${MKDIR} -p ${OBJECTDIR}
 	${RM} "$@.d"
 	$(COMPILE.c) -g -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/bubbleSort.o bubbleSort.c
+
+${OBJECTDIR}/insertionSort.o: insertionSort.c
+	${MKDIR} -p ${OBJECTDIR}
+	${RM} "$@.d"
+	$(COMPILE.c) -g -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/insertionSort.o insertionSort.c
 
 ${OBJECTDIR}/main.o: main.c
 	${MKDIR} -p ${OBJECTDIR}

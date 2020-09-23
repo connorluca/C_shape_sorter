@@ -53,6 +53,7 @@ Contributor(s):
                    displayName="Source Files"
                    projectFiles="true">
       <itemPath>bubbleSort.c</itemPath>
+      <itemPath>insertionSort.c</itemPath>
       <itemPath>main.c</itemPath>
       <itemPath>selectionSort.c</itemPath>
     </logicalFolder>
@@ -73,6 +74,8 @@ Contributor(s):
       <compileType>
       </compileType>
       <item path="bubbleSort.c" ex="false" tool="0" flavor2="0">
+      </item>
+      <item path="insertionSort.c" ex="false" tool="0" flavor2="0">
       </item>
       <item path="main.c" ex="false" tool="0" flavor2="0">
       </item>
@@ -102,6 +105,8 @@ Contributor(s):
         </asmTool>
       </compileType>
       <item path="bubbleSort.c" ex="false" tool="0" flavor2="0">
+      </item>
+      <item path="insertionSort.c" ex="false" tool="0" flavor2="0">
       </item>
       <item path="main.c" ex="false" tool="0" flavor2="0">
       </item>
