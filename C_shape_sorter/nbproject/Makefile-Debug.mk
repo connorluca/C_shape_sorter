@@ -35,6 +35,7 @@ OBJECTDIR=${CND_BUILDDIR}/${CND_CONF}/${CND_PLATFORM}
 
 # Object Files
 OBJECTFILES= \
+	${OBJECTDIR}/binaryInsertion.o \
 	${OBJECTDIR}/bubbleSort.o \
 	${OBJECTDIR}/insertionSort.o \
 	${OBJECTDIR}/main.o \
@@ -64,6 +65,11 @@ LDLIBSOPTIONS=
 ${CND_DISTDIR}/${CND_CONF}/${CND_PLATFORM}/c_shape_sorter.exe: ${OBJECTFILES}
 	${MKDIR} -p ${CND_DISTDIR}/${CND_CONF}/${CND_PLATFORM}
 	${LINK.c} -o ${CND_DISTDIR}/${CND_CONF}/${CND_PLATFORM}/c_shape_sorter ${OBJECTFILES} ${LDLIBSOPTIONS}
+
+${OBJECTDIR}/binaryInsertion.o: binaryInsertion.c
+	${MKDIR} -p ${OBJECTDIR}
+	${RM} "$@.d"
+	$(COMPILE.c) -g -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/binaryInsertion.o binaryInsertion.c
 
 ${OBJECTDIR}/bubbleSort.o: bubbleSort.c
 	${MKDIR} -p ${OBJECTDIR}

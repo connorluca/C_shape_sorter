@@ -21,6 +21,7 @@
 #include "selectionSort.c"
 #include "bubbleSort.c"
 #include "linearInsertionSort.c"
+#include "binaryInsertion.c"
 /*
  * 
  */

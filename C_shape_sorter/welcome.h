@@ -69,6 +69,38 @@ struct Shape * shiftArrayRight(struct Shape *shapes, int elementToShiftFrom, str
     shapes[elementToShiftFrom] = elementToAdd;
     return shapes;
 }
+/*CurrentSize becuase the actual allocated size for the array is much larger than the number of elements inside of it
+ * for the purposes of the insertion sort. For subsequent calls to the currentSize will be used to determine the right end of the array.
+ */
+int binarySearch(struct Shape *shapes, struct Shape shape, int currentSize){
+    return recursiveBinarySearch(shapes,shape, 0, currentSize);
+}
+/*returns the position to add the next element into.
+ */
+int recursiveBinarySearch(struct Shape *shapes, struct Shape shape, int left, int right){
+    if(left > right){
+        return -1;
+    }
+    int mid = (left+right)/2;
+    
+//    if(mid == 0){
+//        if(shapes[0].area <= shape.area &&( shapes[1].area >= shape.area || shapes[1].area == 0)){
+//            return mid;
+//        }
+//    }//as indexs without a shape filling them yet have an area of 0
+    if(shapes[mid].area <= shape.area &&( shapes[mid+1].area >= shape.area || shapes[mid+1].area == 0)){
+        return mid;//if mid< current size we must shift elements right
+    }
+//    else if(shapes[mid].area == 0){
+//        return mid;
+//    } commented out as this scenario cannot/should not ever happen
+    else if(shapes[mid].area >= shape.area){
+        return recursiveBinarySearch(shapes, shape, left, mid-1);
+    }
+    else{
+        return recursiveBinarySearch(shapes, shape, mid+1, right);
+    }
+}
 
 
 #endif	/* _welcome_H */

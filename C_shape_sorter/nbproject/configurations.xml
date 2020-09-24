@@ -52,6 +52,7 @@ Contributor(s):
     <logicalFolder name="SourceFiles"
                    displayName="Source Files"
                    projectFiles="true">
+      <itemPath>binaryInsertion.c</itemPath>
       <itemPath>bubbleSort.c</itemPath>
       <itemPath>insertionSort.c</itemPath>
       <itemPath>main.c</itemPath>
@@ -73,6 +74,8 @@ Contributor(s):
       </toolsSet>
       <compileType>
       </compileType>
+      <item path="binaryInsertion.c" ex="false" tool="0" flavor2="0">
+      </item>
       <item path="bubbleSort.c" ex="false" tool="0" flavor2="0">
       </item>
       <item path="insertionSort.c" ex="false" tool="0" flavor2="0">
@@ -104,6 +107,8 @@ Contributor(s):
           <developmentMode>5</developmentMode>
         </asmTool>
       </compileType>
+      <item path="binaryInsertion.c" ex="false" tool="0" flavor2="0">
+      </item>
       <item path="bubbleSort.c" ex="false" tool="0" flavor2="0">
       </item>
       <item path="insertionSort.c" ex="false" tool="0" flavor2="0">
