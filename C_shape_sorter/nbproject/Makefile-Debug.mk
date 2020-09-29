@@ -40,6 +40,7 @@ OBJECTFILES= \
 	${OBJECTDIR}/insertionSort.o \
 	${OBJECTDIR}/main.o \
 	${OBJECTDIR}/mergeSort.o \
+	${OBJECTDIR}/quickSort.o \
 	${OBJECTDIR}/selectionSort.o
 
 
@@ -91,6 +92,11 @@ ${OBJECTDIR}/mergeSort.o: mergeSort.c
 	${MKDIR} -p ${OBJECTDIR}
 	${RM} "$@.d"
 	$(COMPILE.c) -g -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/mergeSort.o mergeSort.c
+
+${OBJECTDIR}/quickSort.o: quickSort.c
+	${MKDIR} -p ${OBJECTDIR}
+	${RM} "$@.d"
+	$(COMPILE.c) -g -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/quickSort.o quickSort.c
 
 ${OBJECTDIR}/selectionSort.o: selectionSort.c
 	${MKDIR} -p ${OBJECTDIR}

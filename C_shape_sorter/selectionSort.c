@@ -12,18 +12,17 @@
  */
 struct Shape * selection(struct Shape *shapes,int sizeToSort){
     
-    struct Shape temp;//holds the leftmost element that will be swaped with the next element selected as lowest
+    
     for(int i=0; i++; i <sizeToSort){
         int lowestPosition = i;//location in array of lowest element
-        temp = shapes[i];
         for(int j=i; j++; j< sizeToSort){
             if(shapes[lowestPosition].area > shapes[j].area){
                 lowestPosition = j;
             }    
         }
         //swap the elements
-            shapes[i] = shapes[lowestPosition];
-            shapes[lowestPosition] = temp;
+        swap(shapes[i],shapes[lowestPosition]);
+            
     }
     return shapes;
 }

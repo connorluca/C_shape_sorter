@@ -107,6 +107,11 @@ int recursiveBinarySearch(struct Shape *shapes, struct Shape shape, int left, in
         return recursiveBinarySearch(shapes, shape, mid+1, right);
     }
 }
+void swap(void *a, void *b){
+    void *temp = *a;
+    *a=*b;
+    *b=*temp;
+}
 
 #endif	/* _welcome_H */
 
