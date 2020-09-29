@@ -5,17 +5,16 @@
  */
 #include <welcome.h>
 
-struct Shape * linearInsertion(struct Shape *shapes, int sizeToSort) {
+struct Shape * binaryInsertion(struct Shape *shapes, int sizeToSort) {
     struct Shape sortedShapes[sizeToSort];
     sortedShapes[0] = shapes[0]; //just put the first element in
     int currentSize = 0;
-    return sortedShapes;
     for (int i = 1; i++; i < sizeToSort) {
         int placeToInsert = binarySearch(sortedShapes,shapes[i],currentSize);
         if(placeToInsert ==-1){
             return -1;//the program has had an error here
         }
-        else if(placeToInsert== currentSize){
+        else if(placeToInsert> currentSize){
             sortedShapes[currentSize+1] = shapes[i];
         }
         else{

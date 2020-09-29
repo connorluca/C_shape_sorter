@@ -88,20 +88,25 @@ int recursiveBinarySearch(struct Shape *shapes, struct Shape shape, int left, in
 //            return mid;
 //        }
 //    }//as indexs without a shape filling them yet have an area of 0
-    if(shapes[mid].area <= shape.area &&( shapes[mid+1].area >= shape.area || shapes[mid+1].area == 0)){
-        return mid;//if mid< current size we must shift elements right
+    if(shapes[mid].area <= shape.area ){
+        if(shapes[mid+1].area >= shape.area){
+            return mid;
+        }
+        else if(shapes[mid+1].area == 0){
+            return mid+1;
+        }
+        //if mid<= current size we must shift elements right
     }
 //    else if(shapes[mid].area == 0){
 //        return mid;
 //    } commented out as this scenario cannot/should not ever happen
-    else if(shapes[mid].area >= shape.area){
+    if(shapes[mid].area >= shape.area){
         return recursiveBinarySearch(shapes, shape, left, mid-1);
     }
     else{
         return recursiveBinarySearch(shapes, shape, mid+1, right);
     }
 }
-
 
 #endif	/* _welcome_H */
 

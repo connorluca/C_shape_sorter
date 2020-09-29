@@ -56,6 +56,7 @@ Contributor(s):
       <itemPath>bubbleSort.c</itemPath>
       <itemPath>insertionSort.c</itemPath>
       <itemPath>main.c</itemPath>
+      <itemPath>mergeSort.c</itemPath>
       <itemPath>selectionSort.c</itemPath>
     </logicalFolder>
     <logicalFolder name="ExternalFiles"
@@ -81,6 +82,8 @@ Contributor(s):
       <item path="insertionSort.c" ex="false" tool="0" flavor2="0">
       </item>
       <item path="main.c" ex="false" tool="0" flavor2="0">
+      </item>
+      <item path="mergeSort.c" ex="false" tool="0" flavor2="0">
       </item>
       <item path="selectionSort.c" ex="false" tool="0" flavor2="0">
       </item>
@@ -114,6 +117,8 @@ Contributor(s):
       <item path="insertionSort.c" ex="false" tool="0" flavor2="0">
       </item>
       <item path="main.c" ex="false" tool="0" flavor2="0">
+      </item>
+      <item path="mergeSort.c" ex="false" tool="0" flavor2="0">
       </item>
       <item path="selectionSort.c" ex="false" tool="0" flavor2="0">
       </item>
