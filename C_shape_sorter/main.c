@@ -34,12 +34,12 @@ int main(int argc, char** argv) {
     struct Shape shapes[numberOfShapes];
     shapes = readShapes(fp, numberOfShapes, (int)argv[2]);
     fclose(fp);
-    //numberOfShapes isn't really necessary I'm just including it out of laziness and code readability
+    //numberOfShapes is passed because it's better to pass an int than calculate the size of the array of shapes every time
     if(strcmp(argv[3], "Selection")==0){
-        shapes = selection(shapes, numberOfShapes);
+        selection(shapes, numberOfShapes);
     }
     else if(strcmp(argv[3], "Bubble")==0){
-        shapes = bubble(shapes, numberOfShapes);
+        bubble(shapes, numberOfShapes);
     }
     else if(strcmp(argv[3], "LinearInsertion")==0){
         shapes = linearInsertion(shapes, numberOfShapes);

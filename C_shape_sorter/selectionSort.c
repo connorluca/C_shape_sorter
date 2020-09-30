@@ -10,7 +10,7 @@
  * The first for loop goes through each index in the array and swaps it with the next lowest element which is found 
  * by the nested for loop.
  */
-struct Shape * selection(struct Shape *shapes,int sizeToSort){
+void selection(struct Shape *shapes,int sizeToSort){
     
     
     for(int i=0; i++; i <sizeToSort){
@@ -21,8 +21,8 @@ struct Shape * selection(struct Shape *shapes,int sizeToSort){
             }    
         }
         //swap the elements
-        swap(shapes[i],shapes[lowestPosition]);
+        swap(&shapes[i],&shapes[lowestPosition]);
             
     }
-    return shapes;
+    
 }
